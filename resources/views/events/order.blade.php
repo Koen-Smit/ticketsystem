@@ -33,14 +33,14 @@
 
   <p>Totaalprijs: <span id="total-price"></span></p>
 
-  <button type="submit" class="btn btn-primary">Order</button>
+  <button type="submit" class="text-primary">Order</button>
 </form>
 <script>
-    let amountTicketsEl = document.getElementById('amount-tickets');
-    let totalPriceEl = document.getElementById('total-price');
+  let amountTicketsEl = document.getElementById('amount-tickets');
+  let totalPriceEl = document.getElementById('total-price');
 
-    amountTicketsEl.addEventListener('change', () => {
-        totalPriceEl.innerHTML = amountTicketsEl.value * {{$event->price}};
-    });
+  amountTicketsEl.addEventListener('change', () => {
+      totalPriceEl.innerHTML = amountTicketsEl.value * {{$event->price}};
+  });
 </script>
 @endsection
