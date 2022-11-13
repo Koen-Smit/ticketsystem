@@ -76,10 +76,10 @@
   
   <div class="form-group">
     <label for="">Category</label>
-    <input value='{{$event->title}}' type="text" name="category" id="" class="form-control">
+    <input value='{{$event->category}}' type="text" name="category" id="" class="form-control">
   </div>
   
-  <input type="submit" class="btn btn-primary" value="Create new event">
+  <input class="text-primary" type="submit" value="Save changes">
 
 </form>
 @endsection
