@@ -25,8 +25,6 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/', [PagesController::class, 'home']) ->name('home');
-Route::get('/about', [PagesController::class, 'about']) ->middleware(['auth'])->name('about');
-Route::get('/contact', [PagesController::class, 'contact']) ->name('contact');
 
 // Route::get('/events', [EventsController::class, 'index'])->middleware(['auth'])->name('events');
 
