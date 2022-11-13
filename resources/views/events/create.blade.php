@@ -73,7 +73,7 @@
       <input type="text" name="category" id="" class="form-control">
     </div>
     
-    <input type="submit" class="btn btn-primary" value="Create new event">
+    <input type="submit" class="text-primary" value="Create new event">
 
   </form>
 @endsection
