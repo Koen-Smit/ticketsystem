@@ -23,14 +23,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{{route('home')}}">Dashboard</a>
+
+                <li class="nav-item ml-4">
+                  <a class="nav-link" href="{{route('login')}}">Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{route('events.index')}}">Event</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('contact')}}">Contact</a>
+                  <a class="nav-link" href="{{route('register')}}">register</a>
                 </li>
               </ul>
             </div>
@@ -45,6 +43,9 @@
 
         </main>
     </div>
-    <footer>COPYRIGHT CURIO DONT STEAL THIS CODE PLEASE CUS ELSE I WILL FIND YOU</footer>
+    <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://github.com/Koen-Smit" class="hover:underline">Koen™</a>. All Rights Reserved.
+      </span>
+  </footer>
 </body>
 </html>
