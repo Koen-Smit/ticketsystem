@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\OrganisationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,30 +17,16 @@ use App\Http\Controllers\OrdersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
-
 Route::get('/', [PagesController::class, 'home']) ->name('home');
-
-// Route::get('/events', [EventsController::class, 'index'])->middleware(['auth'])->name('events');
-
-// Route::get('/events/create', [EventsController::class, 'create']) ->middleware(['auth'])->name('create');
-
-// Route::get('/events/{id}', [EventsController::class, 'show'])->middleware(['auth'])->name('show');
-
-
-// Route::post('/events', [EventsController::class, 'store']) ->name('events.store');
-
-Route::resource('events', EventsController::class)->middleware(['auth']);
+Route::resource('events', EventsController::class, 'index')->middleware(['auth']);
 Route::get('events/{event}/order', [EventsController::class, 'order'])->name('events.order');
 Route::post('events/{event}/order', [EventsController::class, 'storeOrder'])->name('events.storeOrder');
+Route::get('login', [EventsController::class, 'login'])->name('login');
+Route::get('register', [EventsController::class, 'register'])->name('register');
 
-Route::get('tickets/{ticket}/scan', [TicketsController::class, 'scan'])->middleware(['auth'])->name('tickets.scan');
-Route::get('scan', [TicketsController::class, 'scan'])->middleware(['auth'])->name('tickets.scan');
-Route::get('scan', [TicketsController::class, 'scanView'])->name('scan')->middleware(['auth']);
-Route::get('ticket-scanned', [TicketsController::class, 'ticket-scanned'])->name('ticket-scanned')->middleware(['auth']);
+Route::get('orders/{ticket}/confirm', [TicketsController::class, 'confirm'])->middleware(['auth'])->name('orders.confirm');
+
+Route::get('organisations', [OrganisationsController::class, 'index'])->name('organisations.index');
+Route::get('organisations/create', [OrganisationsController::class, 'create'])->name('organisations.create');
+Route::post('organisations', [OrganisationsController::class, 'store'])->name('organisations.store');
+require __DIR__.'/auth.php';
