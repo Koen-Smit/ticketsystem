@@ -16,10 +16,12 @@ class EventsController extends Controller
     public function index()
     {
         $events = Event::all();
+        $tickets = Ticket::all();
         // $events = Event::where('title', 'like', '%wk afwassen%')->get();
         // dd (dump)
         return view('events.index', [
-            'events' => $events
+            'events' => $events,
+            'tickets' => $tickets
         ]);
     }
 
@@ -131,7 +133,7 @@ class EventsController extends Controller
         }
 
         //view returnen
-        return view('orders.confirmOrder', [
+        return view('orders.confirm', [
             'order' => $order,  
         ]);
     }
